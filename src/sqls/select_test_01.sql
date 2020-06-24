@@ -7,3 +7,7 @@
  *
  * 结果应当以 `firstName` 排序。
  */
+SELECT `firstName`, `lastName`
+FROM `employees`
+WHERE `firstName` LIKE 'A%'
+ORDER BY `firstName`;
