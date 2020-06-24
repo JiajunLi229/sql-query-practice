@@ -5,3 +5,6 @@
  * | employeeNumber  | firstName  | lastName  |
  * +─────────────────+────────────+───────────+
  */
+ SELECT `employeeNumber`, `firstName`, `lastName`
+ FROM `employees`
+ WHERE `employeeNumber` = (SELECT MAX(`employeeNumber`) FROM `employees`);
