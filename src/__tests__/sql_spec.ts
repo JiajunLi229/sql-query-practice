@@ -37,7 +37,7 @@ describe('for mySQL query', (): void => {
     ]);
   });
 
-  it('should select unique combination of country and city for customers', async () => {
+  fit('should select unique combination of country and city for customers', async () => {
     const rows = await connection.query(readFromFile('select_test_04'));
     expect(rows).toEqual([
       { "country": "France", 	"city": "Lille"},
