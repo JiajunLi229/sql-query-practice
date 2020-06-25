@@ -8,3 +8,10 @@
  *
  * 输出结果按照 `manager` 排序，然后按照 `employee` 排序。
  */
+ SELECT
+CONCAT(`a`.`lastName`, ', ', `a`.`firstName`) AS `employee`,
+CONCAT(`b`.`lastName`, ', ', `b`.`firstName`) AS `manager` 
+FROM `employees` `a`
+INNER JOIN `employees` `b`
+ON `b`.`employeeNumber` = `a`.`reportsTo`
+ORDER BY `manager`, `employee`;
