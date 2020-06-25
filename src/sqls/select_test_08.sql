@@ -6,3 +6,7 @@
  * | lastName  | firstName  | jobTitle  |
  * +───────────+────────────+───────────+
  */
+SELECT `lastName`,`firstName`, `jobTitle`
+FROM `employees`
+WHERE `jobTitle` = 'Sales Rep' AND `officeCode` = '1'
+ORDER BY `employeeNumber`;
