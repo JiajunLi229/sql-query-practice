@@ -7,3 +7,9 @@
  *
  * 结果应当按照 `customerNumber` 排序。
  */
+SELECT `customers`.`customerNumber`,`customers`.`customerName`
+FROM `customers`
+LEFT JOIN `orders`
+ON `customers`.`customerNumber` = `orders`.`customerNumber`
+WHERE `orders`.`customerNumber` IS NULL
+ORDER BY `customerNumber`;
