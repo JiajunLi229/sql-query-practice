@@ -7,3 +7,7 @@
  *
  * 结果应当按照明细总金额进行排序。
  */
+SELECT	`orderNumber`, (`quantityOrdered` * `priceEach`) as `subtotal` 
+From `orderdetails` 
+ORDER BY `subtotal` DESC
+limit 5;
