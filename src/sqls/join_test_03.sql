@@ -9,3 +9,13 @@
  * 
  * 结果应当按照 `orderNumber` 排序。
  */
+SELECT 
+`orderdetails`.`orderNumber`, 
+`productName`, 
+`MSRP`, 
+`orderdetails`.`priceEach`
+FROM `products`
+INNER JOIN `orderdetails`
+ON `products`.`productCode` = `orderdetails`.`productCode`
+WHERE `products`.`productCode` = 'S10_1678' AND `priceEach` < `MSRP`
+GROUP BY `orderNumber`;
