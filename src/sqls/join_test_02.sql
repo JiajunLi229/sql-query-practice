@@ -10,3 +10,12 @@
  *
  * 结果应当按照 `orderNumber` 排序。
  */
+ SELECT
+`orderdetails`.`orderNumber`,
+SUM(`quantityOrdered` * `priceEach`) as `totalPrice`,
+COUNT(`orders`.`status`) as `detailsCount`
+FROM `orderdetails`
+INNER JOIN `orders`
+ON `orderdetails`.`orderNumber` = `orders`.`orderNumber`
+WHERE `status` = 'Cancelled'
+GROUP BY `orderdetails`.`orderNumber`;
