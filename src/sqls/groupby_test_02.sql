@@ -8,3 +8,10 @@
  *
  * 输出应当根据 `status` 进行排序。
  */
+
+SELECT `status`, SUM(`orderdetails`.`quantityOrdered` * `orderdetails`.`priceEach` ) AS `totalPrice`
+FROM `orders`
+INNER JOIN `orderdetails`
+ON `orders`.`orderNumber` = `orderdetails`.`orderNumber`
+GROUP BY `status`
+ORDER BY `status`;
