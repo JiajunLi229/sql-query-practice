@@ -9,3 +9,10 @@
  *
  * 输出结果按照 `manager` 排序，然后按照 `employee` 排序。
  */
+ SELECT
+CONCAT(`a`.`lastName`, ', ', `a`.`firstName`) AS `employee`,
+IFNULL(CONCAT(`b`.`lastName`, ', ', `b`.`firstName`),'(Top Manager)') AS `manager` 
+FROM `employees` `a`
+LEFT JOIN `employees` `b`
+ON `b`.`employeeNumber` = `a`.`reportsTo`
+ORDER BY `manager`, `employee`;
